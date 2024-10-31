@@ -1,0 +1,292 @@
+/* Base styles */
+:root {
+    --color-bg: #1f2937;
+    --color-bg-card: #374151;
+    --color-text: #ffffff;
+    --color-text-secondary: #ffffff;
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+    --color-blue: #60a5fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #454242;
+    color: var(--color-text);
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+}
+
+/* Container */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Typography */
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: serif;
+    border-bottom: 0.15rem solid #60a5fa;
+}
+
+.typewriter h1 {
+    overflow: hidden;
+    border-right: 1rem solid #60a5fa;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    30% { border-color: #60a5fa; }
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 1.2rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* Header */
+header {
+    text-align: center;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 0 2rem; /* Ajusta el margen según sea necesario */
+    padding: 2rem;
+    padding-bottom: 5rem;
+}
+
+.about-content {
+    flex: 1 1 50%;
+    min-width: 300px;
+    margin-right: 1rem; /* Ajusta el margen según sea necesario */
+    margin-left: 6rem;
+}
+
+.about-card {
+    background-color: var(--color-bg-card);
+    padding: 1.5rem;
+    border-radius: 2rem;
+    margin-left:auto;
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.icon-blue {
+    color: var(--color-blue);
+}
+
+.about-image {
+    flex: 1 1 33%;
+    min-width: 300px;
+    margin-left: auto; /* Mueve la imagen al margen derecho */
+    display: flex;
+    justify-content: flex-end; /* Asegura la alineación hacia la derecha */
+}
+
+.about-image img {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    object-fit: scale-down;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Asegura que los elementos se apilen en pantallas más pequeñas */
+        align-items: center;
+    }
+
+    .about-image {
+        margin-left: 0; /* Resetea el margen para que quede centrado en pantallas más pequeñas */
+        justify-content: center; /* Centra la imagen */
+    }
+
+    .about-content {
+        margin-right: 0; /* Resetea el margen para centrar el contenido en pantallas más pequeñas */
+    }
+}
+
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+.skills-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-left: 5rem;
+    transition: 0.3s;
+}
+
+.skills-icons:hover{
+    transform: scale(1.2);
+}   
+
+.skills-icons img {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* Data Tools Section */
+.data-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    padding-bottom: 2rem;
+    transition: 0.3s;
+}
+.data-tools-grid:hover{
+    transform: scale(1.2);
+}   
+
+
+@media (min-width: 768px) {
+    .data-tools-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+    .data-tools-grid img {
+        width: 4rem;
+        height: 4rem;
+        margin-top: 2rem;
+    }
+
+/* Social Links */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.375rem;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-link:hover {
+    background-color: var(--color-primary-hover);
+}
+
+
+/* Contact Form */
+.contact-form {
+    max-width: 28rem;
+    margin: 0 auto;
+    background-color: var(--color-bg-card);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    background-color: #4b5563;
+    border: none;
+    border-radius: 0.375rem;
+    color: var(--color-text);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.form-group textarea {
+    height: 8rem;
+    resize: vertical;
+}
